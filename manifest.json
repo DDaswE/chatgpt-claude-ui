@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Claude-Like UI",
+  "version": "0.2.1",
+  "description": "Restyles ChatGPT with a Claude-like centered reading layout and typography.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "ChatGPT Claude-Like UI",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "settings.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}
