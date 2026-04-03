@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatGPT Claude-Like UI</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <section class="popup-card">
+        <div class="popup-header">
+          <div>
+            <p class="eyebrow">Quick Controls</p>
+            <h1>Reply styling</h1>
+          </div>
+          <label class="mini-toggle">
+            <input id="enabled" type="checkbox">
+            <span>On</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Font style</span>
+          <select id="fontPreset"></select>
+        </label>
+
+        <div class="grid">
+          <label class="field">
+            <span>Reply size <output id="fontSizePxValue"></output></span>
+            <input id="fontSizePx" type="range" min="15" max="19" step="0.1">
+          </label>
+
+          <label class="field">
+            <span>Line height <output id="lineHeightValue"></output></span>
+            <input id="lineHeight" type="range" min="1.5" max="1.9" step="0.01">
+          </label>
+
+          <label class="field">
+            <span>Reply width <output id="proseMaxChValue"></output></span>
+            <input id="proseMaxCh" type="range" min="62" max="90" step="1">
+          </label>
+
+          <label class="field">
+            <span>Conversation width <output id="threadMaxPxValue"></output></span>
+            <input id="threadMaxPx" type="range" min="820" max="1280" step="10">
+          </label>
+        </div>
+
+        <div class="preview-card">
+          <p class="preview-label">Reply preview</p>
+          <div class="preview-prose" id="previewProse">
+            <p>This quick panel changes only the assistant reply styling, not the ChatGPT composer.</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="openOptions" type="button">More settings</button>
+          <button id="reset" type="button" class="ghost">Reset</button>
+        </div>
+        <p id="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="settings.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
