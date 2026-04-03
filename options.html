@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatGPT Claude-Like UI Settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">ChatGPT Claude-Like UI</p>
+        <h1>Reading-focused layout controls</h1>
+        <p class="lede">
+          Tune only the ChatGPT reply area while keeping the composer native and comfortable to type in.
+        </p>
+      </section>
+
+      <div class="layout">
+        <section class="panel controls">
+          <label class="toggle-row">
+            <span>
+              <strong>Enable restyle</strong>
+              <small>Turns the Claude-like reply layout on for ChatGPT web.</small>
+            </span>
+            <input id="enabled" type="checkbox">
+          </label>
+
+          <label class="field">
+            <span>Reply font style</span>
+            <select id="fontPreset"></select>
+          </label>
+
+          <label class="field">
+            <span>Conversation rail width <output id="threadMaxPxValue"></output></span>
+            <input id="threadMaxPx" type="range" min="820" max="1280" step="10">
+          </label>
+
+          <label class="field">
+            <span>Reply prose width <output id="proseMaxChValue"></output></span>
+            <input id="proseMaxCh" type="range" min="62" max="90" step="1">
+          </label>
+
+          <label class="field">
+            <span>Reply font size <output id="fontSizePxValue"></output></span>
+            <input id="fontSizePx" type="range" min="15" max="19" step="0.1">
+          </label>
+
+          <label class="field">
+            <span>Reply line height <output id="lineHeightValue"></output></span>
+            <input id="lineHeight" type="range" min="1.5" max="1.9" step="0.01">
+          </label>
+
+          <div class="actions">
+            <button id="reset" type="button">Reset defaults</button>
+            <p id="status" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <aside class="panel preview-panel">
+          <p class="preview-kicker">Live preview</p>
+          <div class="preview-card">
+            <p class="preview-label">ChatGPT reply</p>
+            <div class="preview-prose" id="previewProse">
+              <p>Here is a calmer, more Claude-like reading rhythm with a centered response column and gentler typography.</p>
+              <p>The composer stays native now, so typing remains exactly where ChatGPT expects it.</p>
+            </div>
+          </div>
+          <p class="preview-note">This preview only represents the assistant reply area. The ChatGPT input stays native.</p>
+        </aside>
+      </div>
+    </main>
+
+    <script src="settings.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
