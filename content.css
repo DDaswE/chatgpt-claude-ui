@@ -1,0 +1,212 @@
+:root {
+  --cgc-thread-max: 920px;
+  --cgc-prose-max: 70ch;
+  --cgc-font-size: 15.8px;
+  --cgc-line-height: 1.72;
+  --cgc-body-font: "Avenir Next", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --cgc-ui-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --cgc-thread-margin: clamp(22px, 4vw, 44px);
+  --cgc-soft-radius: 24px;
+  --cgc-lane-max: min(var(--cgc-thread-max), calc(100vw - (var(--cgc-thread-margin) * 2)));
+}
+
+html[data-cgc-enabled="true"] #thread,
+html[data-cgc-enabled="true"] main#main {
+  background: transparent !important;
+}
+
+html[data-cgc-enabled="true"] section[data-turn] > div,
+html[data-cgc-enabled="true"] [data-testid^="conversation-turn-"] > div {
+  --thread-content-margin: var(--cgc-thread-margin) !important;
+  padding-left: var(--cgc-thread-margin) !important;
+  padding-right: var(--cgc-thread-margin) !important;
+}
+
+html[data-cgc-enabled="true"] section[data-turn] > div > div,
+html[data-cgc-enabled="true"] [data-testid^="conversation-turn-"] > div > div {
+  --thread-content-max-width: var(--cgc-lane-max) !important;
+  width: var(--cgc-lane-max) !important;
+  max-width: var(--cgc-lane-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html[data-cgc-enabled="true"] #thread-bottom .text-base > div {
+  width: var(--cgc-lane-max) !important;
+  max-width: var(--cgc-lane-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html[data-cgc-enabled="true"] [data-testid^="conversation-turn-"] .group\/turn-messages,
+html[data-cgc-enabled="true"] [data-testid^="conversation-turn-"] [class*="group/turn-messages"] {
+  width: 100% !important;
+}
+
+html[data-cgc-enabled="true"] section[data-turn] .text-message {
+  width: 100%;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] {
+  align-items: center !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] > div {
+  width: 100% !important;
+  max-width: var(--cgc-prose-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose {
+  max-width: var(--cgc-prose-max) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-family: var(--cgc-body-font) !important;
+  font-size: var(--cgc-font-size) !important;
+  line-height: var(--cgc-line-height) !important;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose > * {
+  max-width: 100%;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose p,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose li,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose blockquote {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose p {
+  margin-top: 0.88em;
+  margin-bottom: 0.88em;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose ul,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose li + li {
+  margin-top: 0.42em;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose h1,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose h2,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose h3,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose h4 {
+  max-width: var(--cgc-prose-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-family: var(--cgc-body-font) !important;
+  letter-spacing: -0.02em;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose pre,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose table,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose .overflow-x-auto {
+  max-width: 100% !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose pre {
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose code:not(pre code) {
+  border-radius: 8px;
+  padding: 0.14em 0.38em;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose blockquote {
+  border-left-width: 3px;
+  padding-left: 1rem;
+  margin-left: 0;
+}
+
+html[data-cgc-enabled="true"] section[data-turn="assistant"] [role="group"][aria-label="Response actions"],
+html[data-cgc-enabled="true"] section[data-turn="user"] [role="group"][aria-label="Your message actions"] {
+  width: 100% !important;
+  max-width: var(--cgc-prose-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html[data-cgc-enabled="true"] section[data-turn="assistant"] div:has(> button[aria-label="Sources"]),
+html[data-cgc-enabled="true"] section[data-turn="assistant"] div:has(> [data-testid="sources-button"]) {
+  width: 100% !important;
+  max-width: var(--cgc-prose-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+html[data-cgc-enabled="true"] section[data-turn="assistant"] button[aria-label="Sources"],
+html[data-cgc-enabled="true"] section[data-turn="assistant"] [data-testid="sources-button"] {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="user"] .user-message-bubble-color {
+  max-width: min(46ch, 100%) !important;
+  border-radius: 20px !important;
+  padding: 0.82rem 1rem !important;
+  margin-left: auto !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="user"] .whitespace-pre-wrap {
+  font-family: var(--cgc-ui-font) !important;
+  font-size: calc(var(--cgc-font-size) - 0.2px) !important;
+  line-height: calc(var(--cgc-line-height) - 0.08) !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="user"] {
+  align-items: center !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="user"] > div {
+  width: 100% !important;
+  max-width: var(--cgc-prose-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-items: flex-end !important;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose strong,
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose b {
+  font-weight: 650;
+}
+
+html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  html[data-cgc-enabled="true"] {
+    --cgc-thread-margin: clamp(14px, 4vw, 24px);
+    --cgc-prose-max: min(100%, 66ch);
+  }
+
+  html[data-cgc-enabled="true"] [data-message-author-role="assistant"] .markdown.prose {
+    max-width: min(100%, 66ch) !important;
+  }
+
+  html[data-cgc-enabled="true"] [data-message-author-role="user"] > div,
+  html[data-cgc-enabled="true"] [data-message-author-role="assistant"] > div {
+    max-width: 100% !important;
+  }
+
+  html[data-cgc-enabled="true"] section[data-turn="assistant"] [role="group"][aria-label="Response actions"],
+  html[data-cgc-enabled="true"] section[data-turn="user"] [role="group"][aria-label="Your message actions"] {
+    max-width: 100% !important;
+  }
+}
